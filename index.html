@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FortisWay — Международные грузоперевозки | Узбекистан, СНГ, Китай, Турция и Европа</title>
+  <meta name="description" content="Транспортно-логистическая компания ООО «FORTISWAY». Автомобильные FTL и сборные LTL перевозки, ж/д и авиадоставка из Китая, РФ, Турции и Европы в Узбекистан. Договор с НДС, GPS 24/7.">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo_brand.jpg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Announcement / Currency Rates Bar (1-to-1 CTRANS) -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span class="badge-pill" style="padding: 3px 12px; font-size: 0.78rem;">
+          <span class="live-pulse"></span> Диспетчерская 24/7 активна
+        </span>
+        <div class="currency-ticker-wrap" id="currencyTicker">
+          <!-- Populated by js/currency.js -->
+        </div>
+        <span style="color: var(--text-muted); font-size: 0.8rem;">
+          Прямой договор с НДС · Страхование CMR
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://t.me/LogisticsFortisway" target="_blank" style="color: #38bdf8; display: flex; align-items: center; gap: 6px;">
+          <span>✈️ Telegram: @LogisticsFortisway</span>
+        </a>
+        <a href="https://wa.me/998935552262" target="_blank" style="color: #10b981; display: flex; align-items: center; gap: 6px;">
+          <span>💬 WhatsApp</span>
+        </a>
+        <a href="tel:+998935552262" class="nav-phone" style="font-size: 0.85rem; color: #ffffff;">
+          📞 +998 (93) 555-22-62
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Glassmorphic Header -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="FortisWay Главная">
+        <img src="assets/images/logo_brand.jpg" alt="ООО FORTISWAY" class="brand-logo-img">
+        <div>
+          <div class="logo-title">Fortis<span>Way</span></div>
+          <div class="logo-subtitle">International Freight & Logistics</div>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services" class="nav-link">Услуги</a></li>
+        <li><a href="#calculator" class="nav-link">Калькулятор</a></li>
+        <li><a href="#routes" class="nav-link">Направления</a></li>
+        <li><a href="#fleet" class="nav-link">Автопарк</a></li>
+        <li><a href="#about" class="nav-link">О компании</a></li>
+        <li><a href="#requisites" class="nav-link">Реквизиты</a></li>
+        <li><a href="#contacts" class="nav-link">Контакты</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tel:+998935552262" class="nav-phone">
+          <span>+998 (93) 555-22-62</span>
+        </a>
+        <a href="#calculator" class="btn-primary" style="padding: 10px 22px; font-size: 0.88rem;">
+          🧮 Рассчитать рейс
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Открыть меню">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Live Tracking Widget (1-to-1 CTRANS Layout) -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge-pill">
+          <span class="live-pulse"></span> Официальный перевозчик и экспедитор
+        </div>
+
+        <h1 class="hero-title">
+          Международные грузоперевозки: <br>
+          <span class="gradient-text">Узбекистан, СНГ, Китай,</span> Турция и Европа
+        </h1>
+
+        <p class="hero-subtitle">
+          Комплектные (FTL) и сборные (LTL) автоперевозки, контейнерные ж/д поезда и экспресс-авиадоставка. 
+          Прямой официальный договор с НДС, персональный диспетчер и круглосуточный GPS-мониторинг груза.
+        </p>
+
+        <!-- Quick Tracking Widget -->
+        <div class="hero-tracker-card">
+          <form class="tracker-form" id="trackerForm">
+            <input type="text" id="trackerInput" class="tracker-input" placeholder="Введите номер накладной или трек (например, FW-825-UZ)..." required>
+            <button type="submit" class="btn-primary" style="padding: 14px 28px;">
+              🔍 Отследить груз
+            </button>
+          </form>
+          <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 10px; display: flex; gap: 15px;">
+            <span>Пример трека: <strong style="color: #38bdf8; cursor: pointer;" onclick="document.getElementById('trackerInput').value='FW-50825-UZ'">FW-50825-UZ</strong></span>
+            <span>· Проверка статуса в реальном времени</span>
+          </div>
+        </div>
+
+        <!-- Badges List -->
+        <div class="hero-badges-list">
+          <div class="badge-pill" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #10b981;">
+            ✓ Договор с НДС 12%
+          </div>
+          <div class="badge-pill">
+            ✓ GPS-трекинг 24/7
+          </div>
+          <div class="badge-pill">
+            ✓ Фиксированная ставка
+          </div>
+          <div class="badge-pill">
+            ✓ Собственные тягачи MAN TGX
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Counters Section -->
+  <section class="section" style="padding: 40px 0; background: #060a12; border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="container">
+      <div class="grid-4">
+        <div class="stat-box">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Лет на рынке грузоперевозок</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">50k+</div>
+          <div class="stat-label">Тонн доставлено клиентам</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">99.8%</div>
+          <div class="stat-label">Рейсов доставлено в срок</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Диспетчерский контроль</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid (1-to-1 CTRANS 6-card layout) -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Наши направления и сервис</span>
+        <h2 class="section-title">Комплексные логистические решения</h2>
+        <p class="section-subtitle">
+          Полный цикл транспортировки «под ключ» от складов консолидации в Китае и Европе до выгрузки на вашем складе в Узбекистане.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-icon-box">🚛</div>
+          <h3 class="service-title">Автомобильные перевозки (FTL / LTL)</h3>
+          <p class="service-desc">
+            Прямые автомобильные рейсы по Узбекистану, в РФ, Казахстан и СНГ. Комплектные еврофуры (тент 82–120 м³) и регулярные сборные отправки.
+          </p>
+          <ul class="service-features">
+            <li>Грузоподъемность до 22 тонн</li>
+            <li>Рефрижераторы (-20°C...+12°C)</li>
+            <li>GPS-мониторинг на всем маршруте</li>
+          </ul>
+          <a href="#calculator" class="service-link">Рассчитать стоимость →</a>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-icon-box">📦</div>
+          <h3 class="service-title">Сборные грузы из Китая и СНГ</h3>
+          <p class="service-desc">
+            Оптимальный тариф для партий от 100 кг до 10 тонн. Консолидация на партнерских складах в Иу, Гуанчжоу и Урумчи.
+          </p>
+          <ul class="service-features">
+            <li>Отправка каждые 3–5 дней</li>
+            <li>Бесплатное хранение при формировании</li>
+            <li>Точный весовой контроль и маркировка</li>
+          </ul>
+          <a href="#calculator" class="service-link">Рассчитать ставку →</a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-icon-box">🚂</div>
+          <h3 class="service-title">Железнодорожные перевозки</h3>
+          <p class="service-desc">
+            Контейнерные поезда (20' и 40' HQ) и вагонные поставки из промышленных центров Китая, России и стран СНГ.
+          </p>
+          <ul class="service-features">
+            <li>Высокая грузоподъемность до 68 тонн</li>
+            <li>Экономия при перевозке тяжелых грузов</li>
+            <li>Экспедирование по транзитным дорогам</li>
+          </ul>
+          <a href="#contacts" class="service-link">Запросить тариф →</a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-icon-box">✈️</div>
+          <h3 class="service-title">Авиаперевозки срочных грузов</h3>
+          <p class="service-desc">
+            Срочная доставка образцов, электроники, запчастей и медицинских грузов регулярными рейсами в аэропорт Ташкента (TAS).
+          </p>
+          <ul class="service-features">
+            <li>Сроки от 3 до 5 рабочих дней</li>
+            <li>Прием в аэропортах Китая, ОАЭ, Турции</li>
+            <li>Специальный контроль сохранности</li>
+          </ul>
+          <a href="#contacts" class="service-link">Заказать авиарейс →</a>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div class="service-icon-box">🌐</div>
+          <h3 class="service-title">Мультимодальные перевозки</h3>
+          <p class="service-desc">
+            Комбинированная доставка морским, железнодорожным и автомобильным транспортом для негабаритных и проектных грузов.
+          </p>
+          <ul class="service-features">
+            <li>Единый сквозной договор и тариф</li>
+            <li>Перегрузка на терминалах без задержек</li>
+            <li>Страхование грузов на всем пути</li>
+          </ul>
+          <a href="#contacts" class="service-link">Индивидуальный расчет →</a>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div class="service-icon-box">📑</div>
+          <h3 class="service-title">Таможенное оформление и НДС</h3>
+          <p class="service-desc">
+            Официальное декларирование, подготовка полного пакета CMR, TIR Carnet, закрывающих документов и сертификатов.
+          </p>
+          <ul class="service-features">
+            <li>100% «белая» таможенная очистка</li>
+            <li>Прямой договор с НДС для компаний</li>
+            <li>Оформление на СВХ и постах Ташкента</li>
+          </ul>
+          <a href="#requisites" class="service-link">Подробнее о договоре →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Freight Calculator Section -->
+  <section class="section section-darker" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Онлайн-калькулятор доставки</span>
+        <h2 class="section-title">Рассчитайте стоимость рейса за 30 секунд</h2>
+        <p class="section-subtitle">
+          Укажите города отправления и назначения, формат и параметры груза для моментального предварительного расчета.
+        </p>
+      </div>
+
+      <div class="calc-wrapper">
+        <div class="calc-grid">
+          <!-- Form Inputs -->
+          <div class="calc-form-side">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="calcOrigin">Пункт отправления</label>
+                <select id="calcOrigin" class="form-select" onchange="updateCalculatorUI()">
+                  <optgroup label="🇨🇳 Китай">
+                    <option value="china_yiwu" selected>Китай (Иу) — Склад консолидации</option>
+                    <option value="china_guangzhou">Китай (Гуанчжоу) — Склад консолидации</option>
+                    <option value="china_urumqi">Китай (Урумчи) — Хаб</option>
+                  </optgroup>
+                  <optgroup label="🇷🇺 Россия">
+                    <option value="russia_moscow">Россия (Москва и МО)</option>
+                    <option value="russia_spb">Россия (Санкт-Петербург)</option>
+                    <option value="russia_ivanovo">Россия (Иваново)</option>
+                    <option value="russia_ekb">Россия (Екатеринбург)</option>
+                  </optgroup>
+                  <optgroup label="🇹🇷 Турция / 🇰🇿 Казахстан">
+                    <option value="turkey_istanbul">Турция (Стамбул)</option>
+                    <option value="kazakhstan_almaty">Казахстан (Алматы)</option>
+                  </optgroup>
+                  <optgroup label="🇺🇿 Экспорт из Узбекистана">
+                    <option value="tashkent">Узбекистан (Ташкент)</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="calcDest">Пункт назначения</label>
+                <select id="calcDest" class="form-select" onchange="updateCalculatorUI()">
+                  <optgroup label="🇺🇿 Импорт в Узбекистан">
+                    <option value="tashkent" selected>Ташкент (СВХ / склад получателя)</option>
+                    <option value="samarkand">Самарканд</option>
+                    <option value="namangan">Наманган / Андижан</option>
+                    <option value="bukhara">Бухара</option>
+                  </optgroup>
+                  <optgroup label="🌍 Экспорт в РФ и СНГ">
+                    <option value="russia_moscow">Россия (Москва)</option>
+                    <option value="russia_ivanovo">Россия (Иваново)</option>
+                    <option value="kazakhstan_almaty">Казахстан (Алматы)</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+
+            <!-- Mode Selection: FTL vs LTL -->
+            <div class="form-group">
+              <label class="form-label">Тип загрузки и транспорта</label>
+              <div class="radio-group">
+                <div class="radio-btn active" data-mode="FTL" onclick="setCalcMode('FTL')">
+                  🚛 Целая еврофура FTL (до 22 т)
+                </div>
+                <div class="radio-btn" data-mode="LTL" onclick="setCalcMode('LTL')">
+                  📦 Сборный груз LTL (от 100 кг)
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" id="calcWeightLabel" for="calcWeight">Вес груза (тонн)</label>
+                <input type="number" id="calcWeight" class="form-control" value="20" min="0.1" step="0.5" oninput="updateCalculatorUI()">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="calcVolume">Объём груза (м³)</label>
+                <input type="number" id="calcVolume" class="form-control" value="92" min="0.5" step="1" oninput="updateCalculatorUI()">
+              </div>
+            </div>
+
+            <div style="background: rgba(0, 132, 255, 0.08); border-left: 3px solid var(--primary); padding: 12px 16px; border-radius: 4px; font-size: 0.85rem; color: #cbd5e1;">
+              💡 <strong>Включено в расчет:</strong> НДС 12%, топливный сбор, GPS-трекинг, комплект закрывающих документов CMR и акт сверки.
+            </div>
+          </div>
+
+          <!-- Result Panel -->
+          <div class="calc-result-panel">
+            <div>
+              <div class="calc-price-badge">Ориентировочная ставка рейса:</div>
+              <div class="calc-price-value" id="calcPriceResult">$4,200</div>
+              
+              <ul class="calc-breakdown">
+                <li>
+                  <span>Маршрут:</span>
+                  <span id="calcRouteResult">Китай (Иу) ➔ Ташкент</span>
+                </li>
+                <li>
+                  <span>Срок доставки:</span>
+                  <span id="calcDaysResult" style="color: #10b981;">14 дн.</span>
+                </li>
+                <li>
+                  <span>Юр. сопровождение:</span>
+                  <span>Прямой договор + НДС</span>
+                </li>
+                <li>
+                  <span>Мониторинг:</span>
+                  <span>GPS 24/7 + Диспетчер</span>
+                </li>
+              </ul>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <a href="https://t.me/LogisticsFortisway" id="calcTgBtn" target="_blank" class="btn-primary" style="background: linear-gradient(135deg, #0284c7 0%, #00a6fb 100%);">
+                ✈️ Зафиксировать ставку в Telegram
+              </a>
+              <a href="https://wa.me/998935552262" id="calcWaBtn" target="_blank" class="btn-outline">
+                💬 Написать в WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Routes Matrix & Fleet Showcase -->
+  <section class="section" id="routes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">География поставок</span>
+        <h2 class="section-title">Регулярные направления и сроки</h2>
+        <p class="section-subtitle">Отработанные логистические коридоры с проверенным графиком движения без простоя на границах.</p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom: 50px;">
+        <div class="service-card" style="padding: 24px;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 8px; color: #38bdf8;">🇷🇺 Россия ⇄ Узбекистан</h4>
+          <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 12px;">Москва, Санкт-Петербург, Иваново, Екатеринбург ➔ Ташкент, Самарканд.</p>
+          <div style="font-size: 0.85rem; color: #94a3b8;">Срок автодоставки: <strong style="color: #ffffff;">6–8 дней</strong></div>
+        </div>
+        <div class="service-card" style="padding: 24px;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 8px; color: #38bdf8;">🇨🇳 Китай ➔ Узбекистан</h4>
+          <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 12px;">Иу, Гуанчжоу, Шэньчжэнь, Урумчи ➔ Таможенный пост Ташкента.</p>
+          <div style="font-size: 0.85rem; color: #94a3b8;">Срок автодоставки: <strong style="color: #ffffff;">12–16 дней</strong></div>
+        </div>
+        <div class="service-card" style="padding: 24px;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 8px; color: #38bdf8;">🇹🇷 Турция ➔ Узбекистан</h4>
+          <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 12px;">Стамбул, Бурса, Измир ➔ транзит через Грузию/Азербайджан ➔ Ташкент.</p>
+          <div style="font-size: 0.85rem; color: #94a3b8;">Срок автодоставки: <strong style="color: #ffffff;">10–14 дней</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet Showcase -->
+  <section class="section section-darker" id="fleet">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Подвижной состав</span>
+        <h2 class="section-title">Современный автопарк евростандарта</h2>
+        <p class="section-subtitle">
+          Тягачи MAN TGX и полуприцепы Krone SD с полным комплектом крепежных ремней, пломбировочных тросов и спутниковой телематикой.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="fleet-card">
+          <img src="assets/images/bg_truck_cinematic.jpg" alt="Тягач MAN TGX" class="fleet-img">
+          <div class="fleet-info">
+            <h4 class="fleet-title">Седельные тягачи MAN TGX Euro-5/6</h4>
+            <div class="fleet-specs">
+              <span>Мощность: 480–520 л.с.</span>
+              <span>GPS 24/7</span>
+              <span>2 водителя на дальних рейсах</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fleet-card">
+          <img src="assets/images/hero_truck_highway_1791453076997.jpg" alt="Шторный полуприцеп Krone SD" class="fleet-img">
+          <div class="fleet-info">
+            <h4 class="fleet-title">Шторные полуприцепы Krone SD (92 м³)</h4>
+            <div class="fleet-specs">
+              <span>Объём: 92 м³</span>
+              <span>Грузоподъемность: 22 т</span>
+              <span>33 европаллеты</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fleet-card">
+          <img src="assets/images/logistics_fleet_hub_1791453098158.jpg" alt="Рефрижераторы и мега-тенты" class="fleet-img">
+          <div class="fleet-info">
+            <h4 class="fleet-title">Рефрижераторы и Мега-тенты (105–120 м³)</h4>
+            <div class="fleet-specs">
+              <span>Режим: -20°C...+12°C</span>
+              <span>Двойной ярус</span>
+              <span>Термописец</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Requisites & About Company Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
+        <div>
+          <span class="section-tag">Надежность и прозрачность</span>
+          <h2 class="section-title">ООО «FORTISWAY» — Ваш прямой партнер</h2>
+          <p style="color: #cbd5e1; margin-bottom: 20px; line-height: 1.7;">
+            Мы работаем строго по официальному договору международной транспортной экспедиции с предоставлением всех закрывающих документов (CMR, инвойсы, акты выполненных работ, счета-фактуры с выделенным НДС 12%).
+          </p>
+          <ul class="service-features" style="margin-bottom: 25px;">
+            <li>Белая безналичная оплата в сумах (UZS), долларах (USD) и рублях (RUB)</li>
+            <li>Полная материальная ответственность и экспедиторское страхование</li>
+            <li>Индивидуальный менеджер-логист на связи с погрузки до выгрузки</li>
+          </ul>
+          <a href="#contacts" class="btn-primary">Связаться с руководством →</a>
+        </div>
+
+        <div class="calc-result-panel" id="requisites">
+          <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #38bdf8;">📜 Реквизиты компании</h3>
+          <ul class="calc-breakdown" style="border: none; padding: 0; margin: 0;">
+            <li><span>Наименование:</span> <strong>ООО «FORTISWAY»</strong></li>
+            <li><span>Вид деятельности:</span> <span>Международная логистика и экспедирование</span></li>
+            <li><span>Юр. адрес:</span> <span>Республика Узбекистан, г. Ташкент</span></li>
+            <li><span>Налогообложение:</span> <span style="color: #10b981;">Плательщик НДС 12%</span></li>
+            <li><span>Диспетчерская:</span> <span>+998 (93) 555-22-62</span></li>
+            <li><span>Официальный сайт:</span> <span>www.fortisway.uz</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacts & Quick Call Section -->
+  <section class="section section-darker" id="contacts">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Прямая связь</span>
+        <h2 class="section-title">Остались вопросы? Мы на связи 24/7</h2>
+        <p class="section-subtitle">Позвоните дежурному логисту или напишите в удобный мессенджер для мгновенной консультации.</p>
+      </div>
+
+      <div style="max-width: 650px; margin: 0 auto; text-align: center;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-lg); padding: 40px;">
+          <div style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 10px;">Телефон круглосуточной диспетчерской:</div>
+          <a href="tel:+998935552262" style="font-size: 2.2rem; font-weight: 900; color: #38bdf8; display: block; margin-bottom: 25px;">
+            +998 (93) 555-22-62
+          </a>
+
+          <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://t.me/LogisticsFortisway" target="_blank" class="btn-primary" style="background: linear-gradient(135deg, #0284c7 0%, #00a6fb 100%);">
+              ✈️ Написать в Telegram (@LogisticsFortisway)
+            </a>
+            <a href="https://wa.me/998935552262" target="_blank" class="btn-primary" style="background: #10b981; box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4);">
+              💬 Написать в WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 15px;">
+            <img src="assets/images/logo_brand.jpg" alt="FortisWay" class="brand-logo-img">
+            <div>
+              <div class="logo-title">Fortis<span>Way</span></div>
+              <div class="logo-subtitle">International Freight</div>
+            </div>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Надежный международный логистический оператор. Автоперевозки, контейнерные поезда и авиарейсы под ключ.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Услуги</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Еврофуры FTL</a></li>
+            <li><a href="#services">Сборные грузы LTL</a></li>
+            <li><a href="#services">Ж/Д Контейнеры 40' HQ</a></li>
+            <li><a href="#services">Авиадоставка</a></li>
+            <li><a href="#services">Таможенная очистка</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Главная</a></li>
+            <li><a href="#calculator">Калькулятор рейса</a></li>
+            <li><a href="#routes">Маршруты и сроки</a></li>
+            <li><a href="#fleet">Автопарк</a></li>
+            <li><a href="#requisites">Реквизиты и НДС</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+998935552262">📞 +998 (93) 555-22-62</a></li>
+            <li><a href="https://t.me/LogisticsFortisway">✈️ @LogisticsFortisway</a></li>
+            <li><a href="https://wa.me/998935552262">💬 WhatsApp чат</a></li>
+            <li><span style="color: var(--text-muted);">🌐 www.fortisway.uz</span></li>
+            <li><span style="color: var(--text-muted);">📍 Узбекистан, г. Ташкент</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 ООО «FORTISWAY». Все права защищены. Официальный договор с НДС.</div>
+        <div>Дизайн и функционал адаптирован под стандарт CTRANS.uz</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Tracking Simulation -->
+  <div class="modal-overlay" id="trackerModal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeTrackerModal()">&times;</button>
+      <h3 style="font-size: 1.3rem; margin-bottom: 8px; color: #ffffff;">Статус доставки груза</h3>
+      <div id="trackerModalBody">
+        <!-- Rendered by js/tracker.js -->
+      </div>
+      <div style="margin-top: 25px; text-align: right;">
+        <button class="btn-primary" onclick="closeTrackerModal()" style="padding: 8px 20px; font-size: 0.88rem;">
+          Закрыть
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/currency.js"></script>
+  <script src="js/tracker.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
