@@ -14,33 +14,7 @@
 </head>
 <body>
 
-  <!-- Top Announcement / Currency Rates Bar (1-to-1 CTRANS) -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="top-bar-left">
-        <span class="badge-pill" style="padding: 3px 12px; font-size: 0.78rem;">
-          <span class="live-pulse"></span> Диспетчерская 24/7 активна
-        </span>
-        <div class="currency-ticker-wrap" id="currencyTicker">
-          <!-- Populated by js/currency.js -->
-        </div>
-        <span style="color: var(--text-muted); font-size: 0.8rem;">
-          Прямой договор с НДС · Страхование CMR
-        </span>
-      </div>
-      <div class="top-bar-right">
-        <a href="https://t.me/LogisticsFortisway" target="_blank" style="color: #38bdf8; display: flex; align-items: center; gap: 6px;">
-          <span>✈️ Telegram: @LogisticsFortisway</span>
-        </a>
-        <a href="https://wa.me/998935552262" target="_blank" style="color: #10b981; display: flex; align-items: center; gap: 6px;">
-          <span>💬 WhatsApp</span>
-        </a>
-        <a href="tel:+998935552262" class="nav-phone" style="font-size: 0.85rem; color: #ffffff;">
-          📞 +998 (93) 555-22-62
-        </a>
-      </div>
-    </div>
-  </div>
+  
 
   <!-- Sticky Glassmorphic Header -->
   <header class="navbar" id="navbar">
@@ -258,129 +232,210 @@
     </div>
   </section>
 
+  
+  <!-- CTRANS 1-to-1 Experience & Video Banner Section (with bg-04.webp) -->
+  <section class="video-experience-section" id="experience">
+    <div class="container">
+      <div class="video-experience-content">
+        <h2 style="font-size: 2.3rem; font-weight: 700; color: #ffffff; margin-bottom: 16px; letter-spacing: -0.01em;">
+          Опыт работы в сфере логистических услуг
+        </h2>
+        <p style="color: #cbd5e1; font-size: 1.15rem; margin-bottom: 34px;">
+          Вы узнаете о нашей логистической службе через это видео
+        </p>
+        <div class="video-play-trigger" onclick="openVideoModal()">
+          <div class="video-play-circle">
+            ▶
+          </div>
+          <div style="text-align: left; color: #ffffff; line-height: 1.2;">
+            <div style="font-size: 0.90rem; font-weight: 500;">Смотреть</div>
+            <div style="font-size: 1.05rem; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.05em;">это видео</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Interactive Freight Calculator Section -->
+    <!-- Interactive Freight Calculator Section (1-to-1 CTRANS ctrans.uz/ru/calculator) -->
   <section class="section section-darker" id="calculator">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Онлайн-калькулятор доставки</span>
-        <h2 class="section-title">Рассчитайте стоимость рейса за 30 секунд</h2>
-        <p class="section-subtitle">
-          Укажите города отправления и назначения, формат и параметры груза для моментального предварительного расчета.
+      <div class="section-title text-center" style="margin-bottom: 40px;">
+        <h2 class="section-heading" style="color: #ffffff; font-size: 2.2rem; font-weight: 700;">Калькулятор стоимости доставки</h2>
+        <div class="heading-line" style="margin: 12px auto;"></div>
+        <p class="section-subtext" style="color: #94a3b8; max-width: 650px; margin: 0 auto;">
+          Выберите вид транспорта, укажите вес и объем для расчета ориентировочной ставки с НДС
         </p>
       </div>
 
-      <div class="calc-wrapper">
-        <div class="calc-grid">
-          <!-- Form Inputs -->
-          <div class="calc-form-side">
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="calcOrigin">Пункт отправления</label>
-                <select id="calcOrigin" class="form-select" onchange="updateCalculatorUI()">
-                  <optgroup label="🇨🇳 Китай">
-                    <option value="china_yiwu" selected>Китай (Иу) — Склад консолидации</option>
-                    <option value="china_guangzhou">Китай (Гуанчжоу) — Склад консолидации</option>
-                    <option value="china_urumqi">Китай (Урумчи) — Хаб</option>
-                  </optgroup>
-                  <optgroup label="🇷🇺 Россия">
-                    <option value="russia_moscow">Россия (Москва и МО)</option>
-                    <option value="russia_spb">Россия (Санкт-Петербург)</option>
-                    <option value="russia_ivanovo">Россия (Иваново)</option>
-                    <option value="russia_ekb">Россия (Екатеринбург)</option>
-                  </optgroup>
-                  <optgroup label="🇹🇷 Турция / 🇰🇿 Казахстан">
-                    <option value="turkey_istanbul">Турция (Стамбул)</option>
-                    <option value="kazakhstan_almaty">Казахстан (Алматы)</option>
-                  </optgroup>
-                  <optgroup label="🇺🇿 Экспорт из Узбекистана">
-                    <option value="tashkent">Узбекистан (Ташкент)</option>
-                  </optgroup>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="calcDest">Пункт назначения</label>
-                <select id="calcDest" class="form-select" onchange="updateCalculatorUI()">
-                  <optgroup label="🇺🇿 Импорт в Узбекистан">
-                    <option value="tashkent" selected>Ташкент (СВХ / склад получателя)</option>
-                    <option value="samarkand">Самарканд</option>
-                    <option value="namangan">Наманган / Андижан</option>
-                    <option value="bukhara">Бухара</option>
-                  </optgroup>
-                  <optgroup label="🌍 Экспорт в РФ и СНГ">
-                    <option value="russia_moscow">Россия (Москва)</option>
-                    <option value="russia_ivanovo">Россия (Иваново)</option>
-                    <option value="kazakhstan_almaty">Казахстан (Алматы)</option>
-                  </optgroup>
-                </select>
-              </div>
+      <!-- Main Calculator Card Grid (8 cols left / 4 cols right) -->
+      <div class="calc-ctrans-grid">
+        <!-- Left Side: Modes & Inputs -->
+        <div class="calc-ctrans-main">
+          <!-- 4 Transport Mode Cards (2x2 Grid) -->
+          <div class="calc-modes-grid">
+            <div class="calc-mode-card" data-cat="air" onclick="selectTransportCat('air')">
+              <span class="calc-mode-icon">✈</span>
+              <span class="calc-mode-title">Авиаперевозки</span>
             </div>
-
-            <!-- Mode Selection: FTL vs LTL -->
-            <div class="form-group">
-              <label class="form-label">Тип загрузки и транспорта</label>
-              <div class="radio-group">
-                <div class="radio-btn active" data-mode="FTL" onclick="setCalcMode('FTL')">
-                  🚛 Целая еврофура FTL (до 22 т)
-                </div>
-                <div class="radio-btn" data-mode="LTL" onclick="setCalcMode('LTL')">
-                  📦 Сборный груз LTL (от 100 кг)
-                </div>
-              </div>
+            <div class="calc-mode-card" data-cat="rail" onclick="selectTransportCat('rail')">
+              <span class="calc-mode-icon">🚆</span>
+              <span class="calc-mode-title">Железнодорожные перевозки</span>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" id="calcWeightLabel" for="calcWeight">Вес груза (тонн)</label>
-                <input type="number" id="calcWeight" class="form-control" value="20" min="0.1" step="0.5" oninput="updateCalculatorUI()">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="calcVolume">Объём груза (м³)</label>
-                <input type="number" id="calcVolume" class="form-control" value="92" min="0.5" step="1" oninput="updateCalculatorUI()">
-              </div>
+            <div class="calc-mode-card active" data-cat="auto" onclick="selectTransportCat('auto')">
+              <span class="calc-mode-icon">🚚</span>
+              <span class="calc-mode-title">Автоперевозки</span>
             </div>
-
-            <div style="background: rgba(0, 132, 255, 0.08); border-left: 3px solid var(--primary); padding: 12px 16px; border-radius: 4px; font-size: 0.85rem; color: #cbd5e1;">
-              💡 <strong>Включено в расчет:</strong> НДС 12%, топливный сбор, GPS-трекинг, комплект закрывающих документов CMR и акт сверки.
+            <div class="calc-mode-card" data-cat="sea" onclick="selectTransportCat('sea')">
+              <span class="calc-mode-icon">🚢</span>
+              <span class="calc-mode-title">Морские перевозки</span>
             </div>
           </div>
 
-          <!-- Result Panel -->
-          <div class="calc-result-panel">
-            <div>
-              <div class="calc-price-badge">Ориентировочная ставка рейса:</div>
-              <div class="calc-price-value" id="calcPriceResult">$4,200</div>
-              
-              <ul class="calc-breakdown">
-                <li>
-                  <span>Маршрут:</span>
-                  <span id="calcRouteResult">Китай (Иу) ➔ Ташкент</span>
-                </li>
-                <li>
-                  <span>Срок доставки:</span>
-                  <span id="calcDaysResult" style="color: #10b981;">14 дн.</span>
-                </li>
-                <li>
-                  <span>Юр. сопровождение:</span>
-                  <span>Прямой договор + НДС</span>
-                </li>
-                <li>
-                  <span>Мониторинг:</span>
-                  <span>GPS 24/7 + Диспетчер</span>
-                </li>
-              </ul>
+          <!-- Route Selector (Orig / Dest) -->
+          <div class="calc-input-row" style="margin-top: 24px;">
+            <div class="calc-field">
+              <label class="calc-label" for="calcOrigin">Пункт отправления</label>
+              <select id="calcOrigin" class="calc-control" onchange="runCalculation()">
+                <optgroup label="🇨🇳 Китай">
+                  <option value="china_yiwu" selected>Китай (Иу) — Склад консолидации</option>
+                  <option value="china_guangzhou">Китай (Гуанчжоу)</option>
+                  <option value="china_urumqi">Китай (Урумчи)</option>
+                </optgroup>
+                <optgroup label="🇷🇺 Россия">
+                  <option value="russia_moscow">Россия (Москва и МО)</option>
+                  <option value="russia_spb">Россия (Санкт-Петербург)</option>
+                  <option value="russia_ivanovo">Россия (Иваново)</option>
+                </optgroup>
+                <optgroup label="🇹🇷 Турция / 🇰🇿 Казахстан">
+                  <option value="turkey_istanbul">Турция (Стамбул)</option>
+                  <option value="kazakhstan_almaty">Казахстан (Алматы)</option>
+                </optgroup>
+                <optgroup label="🇺🇿 Экспорт из Узбекистана">
+                  <option value="tashkent">Узбекистан (Ташкент)</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="calc-field">
+              <label class="calc-label" for="calcDest">Пункт назначения</label>
+              <select id="calcDest" class="calc-control" onchange="runCalculation()">
+                <optgroup label="🇺🇿 Импорт в Узбекистан">
+                  <option value="tashkent" selected>Ташкент (СВХ / склад получателя)</option>
+                  <option value="samarkand">Самарканд</option>
+                  <option value="namangan">Наманган / Андижан</option>
+                </optgroup>
+                <optgroup label="🌍 Экспорт в РФ и СНГ">
+                  <option value="russia_moscow">Россия (Москва)</option>
+                  <option value="kazakhstan_almaty">Казахстан (Алматы)</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <!-- Weight & Volume Inputs with Direct Entry & Unit Badges -->
+          <div class="calc-input-row" style="margin-top: 20px;">
+            <div class="calc-field">
+              <label class="calc-label" for="calcWeight">Вес груза (кг / тонн) <span style="color:#ef4444;">*</span></label>
+              <div class="calc-stepper-wrap">
+                <input type="number" id="calcWeight" class="calc-control" value="21" min="0.1" step="0.5" placeholder="Введите вес груза" oninput="runCalculation()">
+                <div class="calc-unit-badge">т</div>
+              </div>
+            </div>
+            <div class="calc-field">
+              <label class="calc-label" for="calcVolume">Объем (м³) <span style="color:#ef4444;">*</span></label>
+              <div class="calc-stepper-wrap">
+                <input type="number" id="calcVolume" class="calc-control" value="86" min="1" step="1" placeholder="Введите объем груза" oninput="runCalculation()">
+                <div class="calc-unit-badge">м³</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dangerous Cargo Checkbox with List -->
+          <div class="calc-danger-box">
+            <label class="calc-checkbox-label">
+              <input type="checkbox" id="calcDanger" onchange="runCalculation()">
+              <span class="calc-danger-title">⚠ Опасный груз</span>
+            </label>
+            <p class="calc-danger-desc">
+              * В список опасных грузов входят следующие виды грузов: Взрывчатые материалы и предметы; Сжатые, сжиженные и растворённые под давлением газы; Легко воспламеняющиеся жидкости; Легко воспламеняющиеся твёрдые вещества; Самовозгорающиеся вещества; Вещества, выделяющие воспламеняющиеся газы при соприкосновении с водой; Окисляющие вещества; Органические пероксиды; Ядовитые вещества; Радиоактивные материалы; Коррозирующие вещества; Прочие опасные вещества.
+            </p>
+          </div>
+
+          <!-- Calculate Button -->
+          <div style="margin-top: 22px;">
+            <button type="button" class="btn-calculate-green" onclick="runCalculation(true)">
+              РАССЧИТАТЬ
+            </button>
+          </div>
+
+          <!-- Compact Warning Box (Within boundaries) -->
+          <div class="calc-compact-warning">
+            <div class="calc-warning-headline">
+              <span>⚠️</span>
+              <span>ВНИМАНИЕ: СТОИМОСТЬ ЯВЛЯЕТСЯ ОРИЕНТИРОВОЧНОЙ!</span>
+            </div>
+            <p style="margin: 4px 0 0 0; font-size: 0.82rem; color: #94a3b8; line-height: 1.45;">
+              Онлайн-расчёт носит предварительный информационный характер. Точная итоговая ставка с НДС закрепляется в официальном договоре-заявке с логистом FortisWay.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Side: Pricing Result Box (1-to-1 CTRANS Pricing Card) -->
+        <div class="calc-ctrans-result">
+          <div class="pricing-card-header">
+            <h3 class="pricing-title">Итого</h3>
+            <span class="pricing-dollar-icon">$</span>
+          </div>
+          <div class="pricing-card-body">
+            <div class="pricing-amount" id="calcPriceResult">10,320 USD</div>
+            <div class="pricing-amount-uzs" id="calcPriceUzs">~132 612 000 UZS</div>
+
+            <div class="pricing-details-list">
+              <div class="pricing-detail-item">
+                <span>Вид транспорта:</span>
+                <strong id="calcTransportResult" style="color: #38bdf8;">Автоперевозки (Еврофура)</strong>
+              </div>
+              <div class="pricing-detail-item">
+                <span>Срок доставки:</span>
+                <strong id="calcDaysResult" style="color: #10b981;">6 – 10 дней</strong>
+              </div>
+              <div class="pricing-detail-item">
+                <span>Маршрут:</span>
+                <strong id="calcRouteResult" style="color: #ffffff;">Китай (Иу) ➔ Ташкент</strong>
+              </div>
+              <div class="pricing-detail-item">
+                <span>Юр. сопровождение:</span>
+                <strong style="color: #10b981;">Прямой договор с НДС 12%</strong>
+              </div>
+              <div class="pricing-detail-item">
+                <span>Мониторинг:</span>
+                <strong style="color: #ffffff;">GPS 24/7 + Диспетчер</strong>
+              </div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-              <a href="https://t.me/LogisticsFortisway" id="calcTgBtn" target="_blank" class="btn-primary" style="background: linear-gradient(135deg, #0284c7 0%, #00a6fb 100%);">
-                ✈️ Зафиксировать ставку в Telegram
+            <div class="pricing-actions">
+              <a href="https://t.me/LogisticsFortisway" id="calcTgBtn" target="_blank" class="btn-pricing-tg">
+                ✈ Зафиксировать в Telegram
               </a>
-              <a href="https://wa.me/998935552262" id="calcWaBtn" target="_blank" class="btn-outline">
+              <a href="https://wa.me/998935552262" id="calcWaBtn" target="_blank" class="btn-pricing-wa">
                 💬 Написать в WhatsApp
+              </a>
+              <a href="tel:+998935552262" class="btn-pricing-call">
+                📞 Позвонить логисту (+998 93 555-22-62)
               </a>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Description Block Below Calculator (1-to-1 CTRANS Text) -->
+      <div class="calc-bottom-info">
+        <h4 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 12px;">
+          Калькулятор для расчета ориентировочной стоимости грузоперевозок
+        </h4>
+        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+          Компания «FortisWay», предоставляющая транспортно-логистические услуги, разработала специально для своих клиентов калькулятор стоимости перевозок грузов в пределах Узбекистана, СНГ, Китая, Турции и Европы. Сейчас каждый клиент имеет возможность узнать, сколько ему придется заплатить за услугу перевозки груза транспортной компанией, спланировать и оптимизировать собственные расходы. С помощью калькулятора можно рассчитать стоимость доставки грузов до пункта назначения.
+        </p>
       </div>
     </div>
   </section>
@@ -578,6 +633,11 @@
         </div>
       </div>
 
+            <!-- Currency Ticker in Footer -->
+      <div style="margin: 25px 0 15px 0; padding: 14px 0; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.85rem; color: #94a3b8; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <span style="color: #cbd5e1; font-weight: 500;">Официальные курсы валют ЦБ РУз:</span>
+        <div id="currencyTicker" style="display: flex; gap: 16px;"></div>
+      </div>
       <div class="footer-bottom">
         <div>© 2026 ООО «FORTISWAY». Все права защищены. Официальный договор с НДС.</div>
         <div>Дизайн и функционал адаптирован под стандарт CTRANS.uz</div>

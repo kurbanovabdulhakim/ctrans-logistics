@@ -101,3 +101,31 @@ function setCalcMode(mode) {
     updateCalculatorUI();
   }
 }
+
+
+// Video modal handlers
+function openVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const player = document.getElementById('videoPlayer');
+  if (modal) {
+    modal.classList.add('active');
+    if (player) {
+      player.currentTime = 0;
+      player.play().catch(() => {});
+    }
+  }
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const player = document.getElementById('videoPlayer');
+  if (modal) {
+    modal.classList.remove('active');
+    if (player) {
+      player.pause();
+    }
+  }
+}
+
+window.openVideoModal = openVideoModal;
+window.closeVideoModal = closeVideoModal;
