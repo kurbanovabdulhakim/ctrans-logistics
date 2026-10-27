@@ -7,10 +7,383 @@
   <meta name="description" content="Транспортно-логистическая компания ООО «FORTISWAY». Автомобильные FTL и сборные LTL перевозки, ж/д и авиадоставка из Китая, РФ, Турции и Европы в Узбекистан. Договор с НДС, GPS 24/7.">
   <link rel="icon" type="image/jpeg" href="assets/images/logo_brand.jpg">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Cache Buster Stylesheets -->
+  <link rel="stylesheet" href="css/app.css?v=20261027_1940">
+  
+  
+
+  <!-- Embedded 1-to-1 CTRANS Critical Styling -->
+  <style>
+    /* Strict Single Line Navbar */
+    .top-bar { display: none !important; }
+    .navbar { background: rgba(9, 14, 23, 0.95) !important; backdrop-filter: blur(12px) !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+    .navbar .nav-container { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 10px !important; flex-wrap: nowrap !important; max-width: 1360px !important; margin: 0 auto !important; padding: 0 16px !important; }
+    .navbar .nav-links { display: flex !important; align-items: center !important; list-style: none !important; gap: 14px !important; flex-wrap: nowrap !important; margin: 0 !important; padding: 0 !important; }
+    .navbar .nav-link { font-size: 0.88rem !important; font-weight: 500 !important; color: #cbd5e1 !important; white-space: nowrap !important; padding: 8px 2px !important; text-decoration: none !important; }
+    .navbar .nav-link:hover { color: #38bdf8 !important; }
+    .navbar .nav-actions { display: flex !important; align-items: center !important; gap: 10px !important; flex-shrink: 0 !important; }
+    .navbar .nav-phone { white-space: nowrap !important; font-size: 0.88rem !important; color: #ffffff !important; font-weight: 600 !important; text-decoration: none !important; }
+    .btn-calc-nav { background: #0084ff !important; color: #fff !important; padding: 9px 18px !important; border-radius: 50px !important; font-weight: 600 !important; font-size: 0.85rem !important; white-space: nowrap !important; text-decoration: none !important; }
+
+    /* CTRANS Banner */
+    .ctrans-calc-banner {
+      background: linear-gradient(rgba(10, 16, 28, 0.82), rgba(10, 16, 28, 0.88)), url('assets/images/bg-calculator.webp') center/cover no-repeat;
+      padding: 70px 0 50px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .ctrans-calc-banner h1 { font-size: 2.6rem; font-weight: 800; color: #ffffff; margin-bottom: 10px; }
+    .ctrans-calc-banner .breadcrumb { font-size: 0.95rem; color: #94a3b8; }
+    .ctrans-calc-banner .breadcrumb a { color: #38bdf8; text-decoration: none; }
+
+    /* CTRANS Light Calculator Section (1-to-1 ctrans.uz/ru/calculator) */
+    .ctrans-calculator-section {
+      background: #f8fafc !important;
+      color: #0f172a !important;
+      padding: 70px 0 60px !important;
+    }
+    .calc-layout-grid {
+      display: grid !important;
+      grid-template-columns: 8fr 4fr !important;
+      gap: 36px !important;
+      align-items: start !important;
+    }
+
+    /* 4 Transport Cards */
+    .transport-cards-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 20px !important;
+    }
+    .transport-card {
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 10px !important;
+      padding: 30px 20px !important;
+      text-align: center !important;
+      cursor: pointer !important;
+      transition: all 0.25s ease !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+      user-select: none !important;
+    }
+    .transport-card:hover {
+      border-color: #0f2d59 !important;
+      transform: translateY(-3px) !important;
+      box-shadow: 0 8px 24px rgba(15, 45, 89, 0.12) !important;
+    }
+    .transport-card.active {
+      background: #0f2d59 !important;
+      border: 2px solid #0f2d59 !important;
+      color: #ffffff !important;
+      box-shadow: 0 12px 28px rgba(15, 45, 89, 0.28) !important;
+    }
+    .transport-card-icon {
+      font-size: 2.6rem !important;
+      display: block !important;
+      margin-bottom: 12px !important;
+      color: #0284c7 !important;
+    }
+    .transport-card.active .transport-card-icon {
+      color: #38bdf8 !important;
+    }
+    .transport-card-title {
+      font-size: 1.12rem !important;
+      font-weight: 700 !important;
+      color: #0f2d59 !important;
+      margin: 0 !important;
+    }
+    .transport-card.active .transport-card-title {
+      color: #ffffff !important;
+    }
+
+    /* Input Controls */
+    .calc-row-inputs {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 20px !important;
+      margin-top: 26px !important;
+    }
+    .calc-input-group {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px !important;
+    }
+    .calc-field-label {
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+      color: #1e293b !important;
+    }
+    .calc-input-wrapper {
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+    .calc-input-box {
+      width: 100% !important;
+      height: 52px !important;
+      background: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      border-radius: 6px !important;
+      padding: 0 45px 0 16px !important;
+      font-size: 1.1rem !important;
+      font-weight: 600 !important;
+      color: #0f172a !important;
+      box-sizing: border-box !important;
+      transition: border-color 0.2s !important;
+    }
+    .calc-input-box:focus {
+      outline: none !important;
+      border-color: #0084ff !important;
+      box-shadow: 0 0 0 3px rgba(0, 132, 255, 0.15) !important;
+    }
+    .calc-unit-tag {
+      position: absolute !important;
+      right: 16px !important;
+      color: #64748b !important;
+      font-weight: 600 !important;
+      font-size: 0.95rem !important;
+      pointer-events: none !important;
+    }
+
+    /* Dangerous Cargo Box */
+    .calc-danger-container {
+      margin-top: 24px !important;
+      padding: 18px 20px !important;
+      background: #fff1f2 !important;
+      border: 1px solid #fecdd3 !important;
+      border-radius: 8px !important;
+    }
+    .calc-checkbox-row {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      cursor: pointer !important;
+    }
+    .calc-danger-head {
+      font-size: 1rem !important;
+      font-weight: 700 !important;
+      color: #e11d48 !important;
+    }
+    .calc-danger-text {
+      font-size: 0.82rem !important;
+      color: #64748b !important;
+      line-height: 1.5 !important;
+      margin: 8px 0 0 0 !important;
+    }
+
+    /* Calculate Button */
+    .btn-ctrans-calculate {
+      background: #108d4b !important;
+      color: #ffffff !important;
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      padding: 16px 36px !important;
+      border-radius: 6px !important;
+      border: none !important;
+      cursor: pointer !important;
+      width: 100% !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      box-shadow: 0 4px 14px rgba(16, 141, 75, 0.3) !important;
+      transition: all 0.25s !important;
+      margin-top: 24px !important;
+    }
+    .btn-ctrans-calculate:hover {
+      background: #0d733d !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 20px rgba(16, 141, 75, 0.4) !important;
+    }
+
+    /* Warning Note */
+    .calc-bound-warning {
+      margin-top: 18px !important;
+      padding: 14px 18px !important;
+      background: #fffbeb !important;
+      border: 1px solid #fef3c7 !important;
+      border-left: 4px solid #f59e0b !important;
+      border-radius: 4px !important;
+      box-sizing: border-box !important;
+      max-width: 100% !important;
+    }
+    .calc-bound-warning-title {
+      font-size: 0.85rem !important;
+      font-weight: 700 !important;
+      color: #b45309 !important;
+      letter-spacing: 0.03em !important;
+      text-transform: uppercase !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+    }
+    .calc-bound-warning-p {
+      margin: 4px 0 0 0 !important;
+      font-size: 0.84rem !important;
+      color: #78350f !important;
+      line-height: 1.45 !important;
+    }
+
+    /* Pricing Result Card (Right side) */
+    .pricing-card-ctrans {
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 10px !important;
+      overflow: hidden !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    }
+    .pricing-header-dark {
+      background: #0f2d59 !important;
+      padding: 22px 28px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+    .pricing-header-dark h3 {
+      font-size: 1.4rem !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      margin: 0 !important;
+    }
+    .pricing-header-dark .dollar-badge {
+      font-size: 1.6rem !important;
+      font-weight: 800 !important;
+      color: #38bdf8 !important;
+    }
+    .pricing-body-content {
+      padding: 28px !important;
+    }
+    .pricing-amount-main {
+      font-size: 2.7rem !important;
+      font-weight: 800 !important;
+      color: #0f2d59 !important;
+      line-height: 1.1 !important;
+      letter-spacing: -0.02em !important;
+    }
+    .pricing-amount-secondary {
+      font-size: 1rem !important;
+      color: #0284c7 !important;
+      margin-top: 6px !important;
+      font-weight: 600 !important;
+    }
+    .pricing-list-rows {
+      margin: 22px 0 !important;
+      border-top: 1px solid #f1f5f9 !important;
+      padding-top: 18px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      font-size: 0.90rem !important;
+    }
+    .pricing-row-item {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      color: #64748b !important;
+    }
+    .pricing-row-item strong {
+      color: #0f172a !important;
+    }
+    .pricing-btn-tg {
+      display: block !important;
+      background: linear-gradient(135deg, #0284c7 0%, #00a6fb 100%) !important;
+      color: #ffffff !important;
+      padding: 14px !important;
+      border-radius: 6px !important;
+      text-align: center !important;
+      font-weight: 700 !important;
+      font-size: 0.92rem !important;
+      text-decoration: none !important;
+      margin-bottom: 10px !important;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25) !important;
+    }
+    .pricing-btn-wa {
+      display: block !important;
+      background: #10b981 !important;
+      color: #ffffff !important;
+      padding: 14px !important;
+      border-radius: 6px !important;
+      text-align: center !important;
+      font-weight: 700 !important;
+      font-size: 0.92rem !important;
+      text-decoration: none !important;
+      margin-bottom: 10px !important;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25) !important;
+    }
+    .pricing-btn-call {
+      display: block !important;
+      background: #f1f5f9 !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #0f172a !important;
+      padding: 13px !important;
+      border-radius: 6px !important;
+      text-align: center !important;
+      font-weight: 700 !important;
+      font-size: 0.92rem !important;
+      text-decoration: none !important;
+    }
+
+    /* Bottom Information Block */
+    .calc-info-footer-block {
+      margin-top: 50px !important;
+      padding: 30px !important;
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 8px !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+    }
+    .calc-info-footer-block h4 {
+      font-size: 1.35rem !important;
+      font-weight: 700 !important;
+      color: #0f2d59 !important;
+      margin-bottom: 12px !important;
+    }
+    .calc-info-footer-block p {
+      color: #475569 !important;
+      font-size: 0.98rem !important;
+      line-height: 1.65 !important;
+      margin: 0 !important;
+    }
+
+    /* Callback Section (Screenshot 3) */
+    .callback-section-ctrans {
+      padding: 70px 0 !important;
+      background: #ffffff !important;
+      border-top: 1px solid #e2e8f0 !important;
+    }
+    .callback-box-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    }
+    .callback-img-col {
+      background: url('assets/images/contact-img.webp') center/cover no-repeat !important;
+      min-height: 350px !important;
+    }
+    .callback-form-col {
+      padding: 40px !important;
+      background: #ffffff !important;
+    }
+    .callback-form-col h3 {
+      font-size: 1.35rem !important;
+      font-weight: 700 !important;
+      color: #0f2d59 !important;
+      margin-bottom: 24px !important;
+    }
+
+    @media (max-width: 992px) {
+      .calc-layout-grid, .callback-box-grid { grid-template-columns: 1fr !important; }
+      .callback-img-col { min-height: 250px !important; }
+    }
+    @media (max-width: 576px) {
+      .transport-cards-grid, .calc-row-inputs { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+  
+  
 </head>
 <body>
 
@@ -233,7 +606,7 @@
   </section>
 
   
-  <!-- CTRANS 1-to-1 Experience & Video Banner Section (with bg-04.webp) -->
+    <!-- CTRANS 1-to-1 Experience & Video Banner Section (with bg-04.webp) -->
   <section class="video-experience-section" id="experience">
     <div class="container">
       <div class="video-experience-content">
@@ -256,47 +629,47 @@
     </div>
   </section>
 
-  <!-- Interactive Freight Calculator Section -->
-    <!-- Interactive Freight Calculator Section (1-to-1 CTRANS ctrans.uz/ru/calculator) -->
-  <section class="section section-darker" id="calculator">
+  <!-- CTRANS Title Banner -->
+  <section class="ctrans-calc-banner" id="calculator">
     <div class="container">
-      <div class="section-title text-center" style="margin-bottom: 40px;">
-        <h2 class="section-heading" style="color: #ffffff; font-size: 2.2rem; font-weight: 700;">Калькулятор стоимости доставки</h2>
-        <div class="heading-line" style="margin: 12px auto;"></div>
-        <p class="section-subtext" style="color: #94a3b8; max-width: 650px; margin: 0 auto;">
-          Выберите вид транспорта, укажите вес и объем для расчета ориентировочной ставки с НДС
-        </p>
+      <h1>Калькулятор</h1>
+      <div class="breadcrumb">
+        <a href="#hero">Главная</a> • <span>Калькулятор</span>
       </div>
+    </div>
+  </section>
 
-      <!-- Main Calculator Card Grid (8 cols left / 4 cols right) -->
-      <div class="calc-ctrans-grid">
-        <!-- Left Side: Modes & Inputs -->
-        <div class="calc-ctrans-main">
-          <!-- 4 Transport Mode Cards (2x2 Grid) -->
+  <!-- CTRANS 1-to-1 Calculator Main Section -->
+  <section class="ctrans-calculator-section">
+    <div class="container">
+      <div class="calc-layout-grid">
+        <!-- Left Side: 4 Modes & Inputs -->
+        <div>
+          <!-- 4 Transport Cards -->
           <div class="calc-modes-grid">
             <div class="calc-mode-card" data-cat="air" onclick="selectTransportCat('air')">
-              <span class="calc-mode-icon">✈</span>
-              <span class="calc-mode-title">Авиаперевозки</span>
+              <span class="transport-card-icon">✈</span>
+              <h5 class="transport-card-title">Авиаперевозки</h5>
             </div>
             <div class="calc-mode-card" data-cat="rail" onclick="selectTransportCat('rail')">
-              <span class="calc-mode-icon">🚆</span>
-              <span class="calc-mode-title">Железнодорожные перевозки</span>
+              <span class="transport-card-icon">🚆</span>
+              <h5 class="transport-card-title">Железнодорожные перевозки</h5>
             </div>
-            <div class="calc-mode-card active" data-cat="auto" onclick="selectTransportCat('auto')">
-              <span class="calc-mode-icon">🚚</span>
-              <span class="calc-mode-title">Автоперевозки</span>
+            <div class="calc-mode-card transport-card active" data-cat="auto" onclick="selectTransportCat('auto')">
+              <span class="transport-card-icon">🚚</span>
+              <h5 class="transport-card-title">Автоперевозки</h5>
             </div>
             <div class="calc-mode-card" data-cat="sea" onclick="selectTransportCat('sea')">
-              <span class="calc-mode-icon">🚢</span>
-              <span class="calc-mode-title">Морские перевозки</span>
+              <span class="transport-card-icon">🚢</span>
+              <h5 class="transport-card-title">Морские перевозки</h5>
             </div>
           </div>
 
-          <!-- Route Selector (Orig / Dest) -->
-          <div class="calc-input-row" style="margin-top: 24px;">
-            <div class="calc-field">
-              <label class="calc-label" for="calcOrigin">Пункт отправления</label>
-              <select id="calcOrigin" class="calc-control" onchange="runCalculation()">
+          <!-- Route Selection -->
+          <div class="calc-row-inputs">
+            <div class="calc-input-group">
+              <label class="calc-field-label" for="calcOrigin">Пункт отправления</label>
+              <select id="calcOrigin" class="calc-input-box" onchange="runCalculation()">
                 <optgroup label="🇨🇳 Китай">
                   <option value="china_yiwu" selected>Китай (Иу) — Склад консолидации</option>
                   <option value="china_guangzhou">Китай (Гуанчжоу)</option>
@@ -316,9 +689,9 @@
                 </optgroup>
               </select>
             </div>
-            <div class="calc-field">
-              <label class="calc-label" for="calcDest">Пункт назначения</label>
-              <select id="calcDest" class="calc-control" onchange="runCalculation()">
+            <div class="calc-input-group">
+              <label class="calc-field-label" for="calcDest">Пункт назначения</label>
+              <select id="calcDest" class="calc-input-box" onchange="runCalculation()">
                 <optgroup label="🇺🇿 Импорт в Узбекистан">
                   <option value="tashkent" selected>Ташкент (СВХ / склад получателя)</option>
                   <option value="samarkand">Самарканд</option>
@@ -332,95 +705,93 @@
             </div>
           </div>
 
-          <!-- Weight & Volume Inputs with Direct Entry & Unit Badges -->
-          <div class="calc-input-row" style="margin-top: 20px;">
-            <div class="calc-field">
-              <label class="calc-label" for="calcWeight">Вес груза (кг / тонн) <span style="color:#ef4444;">*</span></label>
-              <div class="calc-stepper-wrap">
-                <input type="number" id="calcWeight" class="calc-control" value="21" min="0.1" step="0.5" placeholder="Введите вес груза" oninput="runCalculation()">
-                <div class="calc-unit-badge">т</div>
+          <!-- Weight & Volume Inputs -->
+          <div class="calc-row-inputs">
+            <div class="calc-input-group">
+              <label class="calc-field-label" for="calcWeight">Вес груза (кг / тонн) <span style="color:#ef4444;">*</span></label>
+              <div class="calc-input-wrapper">
+                <input type="number" id="calcWeight" class="calc-input-box" value="21" min="0.1" step="0.5" placeholder="Введите вес груза" oninput="runCalculation()">
+                <div class="calc-unit-tag">т</div>
               </div>
             </div>
-            <div class="calc-field">
-              <label class="calc-label" for="calcVolume">Объем (м³) <span style="color:#ef4444;">*</span></label>
-              <div class="calc-stepper-wrap">
-                <input type="number" id="calcVolume" class="calc-control" value="86" min="1" step="1" placeholder="Введите объем груза" oninput="runCalculation()">
-                <div class="calc-unit-badge">м³</div>
+            <div class="calc-input-group">
+              <label class="calc-field-label" for="calcVolume">Объем (м³) <span style="color:#ef4444;">*</span></label>
+              <div class="calc-input-wrapper">
+                <input type="number" id="calcVolume" class="calc-input-box" value="86" min="1" step="1" placeholder="Введите объем груза" oninput="runCalculation()">
+                <div class="calc-unit-tag">м³</div>
               </div>
             </div>
           </div>
 
-          <!-- Dangerous Cargo Checkbox with List -->
-          <div class="calc-danger-box">
-            <label class="calc-checkbox-label">
-              <input type="checkbox" id="calcDanger" onchange="runCalculation()">
-              <span class="calc-danger-title">⚠ Опасный груз</span>
+          <!-- Dangerous Cargo Checkbox -->
+          <div class="calc-danger-container">
+            <label class="calc-checkbox-row">
+              <input type="checkbox" id="calcDanger" onchange="runCalculation()" style="width: 18px; height: 18px; cursor: pointer;">
+              <span class="calc-danger-head">Опасный груз</span>
             </label>
-            <p class="calc-danger-desc">
+            <p class="calc-danger-text">
               * В список опасных грузов входят следующие виды грузов: Взрывчатые материалы и предметы; Сжатые, сжиженные и растворённые под давлением газы; Легко воспламеняющиеся жидкости; Легко воспламеняющиеся твёрдые вещества; Самовозгорающиеся вещества; Вещества, выделяющие воспламеняющиеся газы при соприкосновении с водой; Окисляющие вещества; Органические пероксиды; Ядовитые вещества; Радиоактивные материалы; Коррозирующие вещества; Прочие опасные вещества.
             </p>
           </div>
 
           <!-- Calculate Button -->
-          <div style="margin-top: 22px;">
-            <button type="button" class="btn-calculate-green" onclick="runCalculation(true)">
-              РАССЧИТАТЬ
-            </button>
-          </div>
+          <button type="button" class="btn-calculate-green" onclick="runCalculation(true)">
+            РАССЧИТАТЬ
+          </button>
 
-          <!-- Compact Warning Box (Within boundaries) -->
+          <!-- Compact Warning Box -->
           <div class="calc-compact-warning">
-            <div class="calc-warning-headline">
+            <div class="calc-bound-warning-title">
               <span>⚠️</span>
               <span>ВНИМАНИЕ: СТОИМОСТЬ ЯВЛЯЕТСЯ ОРИЕНТИРОВОЧНОЙ!</span>
             </div>
-            <p style="margin: 4px 0 0 0; font-size: 0.82rem; color: #94a3b8; line-height: 1.45;">
+            <p class="calc-bound-warning-p">
               Онлайн-расчёт носит предварительный информационный характер. Точная итоговая ставка с НДС закрепляется в официальном договоре-заявке с логистом FortisWay.
             </p>
           </div>
         </div>
 
         <!-- Right Side: Pricing Result Box (1-to-1 CTRANS Pricing Card) -->
-        <div class="calc-ctrans-result">
-          <div class="pricing-card-header">
-            <h3 class="pricing-title">Итого</h3>
-            <span class="pricing-dollar-icon">$</span>
+        <div class="pricing-card-ctrans">
+          <div class="pricing-header-dark">
+            <h3>Итого</h3>
+            <span class="dollar-badge">$</span>
           </div>
-          <div class="pricing-card-body">
-            <div class="pricing-amount" id="calcPriceResult">10,320 USD</div>
-            <div class="pricing-amount-uzs" id="calcPriceUzs">~132 612 000 UZS</div>
+          <div class="pricing-body-content">
+            <div class="pricing-amount-main" id="calcPriceResult">10,320 USD</div>
+            <div class="pricing-amount-secondary" id="calcPriceUzs">~132 612 000 UZS</div>
 
-            <div class="pricing-details-list">
-              <div class="pricing-detail-item">
+            <div class="pricing-list-rows">
+              <div class="pricing-row-item">
                 <span>Вид транспорта:</span>
-                <strong id="calcTransportResult" style="color: #38bdf8;">Автоперевозки (Еврофура)</strong>
+                <strong id="calcTransportResult" style="color: #0284c7;">Автоперевозки (Еврофура)</strong>
               </div>
-              <div class="pricing-detail-item">
+              <div class="pricing-row-item">
                 <span>Срок доставки:</span>
-                <strong id="calcDaysResult" style="color: #10b981;">6 – 10 дней</strong>
+                <strong id="calcDaysResult" style="color: #108d4b;">6 – 10 дней</strong>
               </div>
-              <div class="pricing-detail-item">
+              <div class="pricing-row-item">
                 <span>Маршрут:</span>
-                <strong id="calcRouteResult" style="color: #ffffff;">Китай (Иу) ➔ Ташкент</strong>
+                <strong id="calcRouteResult">Китай (Иу) ➔ Ташкент</strong>
               </div>
-              <div class="pricing-detail-item">
+              <div class="pricing-row-item">
                 <span>Юр. сопровождение:</span>
-                <strong style="color: #10b981;">Прямой договор с НДС 12%</strong>
+                <strong style="color: #108d4b;">Прямой договор с НДС 12%</strong>
               </div>
-              <div class="pricing-detail-item">
+              <div class="pricing-row-item">
                 <span>Мониторинг:</span>
-                <strong style="color: #ffffff;">GPS 24/7 + Диспетчер</strong>
+                <strong>GPS 24/7 + Диспетчер</strong>
               </div>
             </div>
 
-            <div class="pricing-actions">
-              <a href="https://t.me/LogisticsFortisway" id="calcTgBtn" target="_blank" class="btn-pricing-tg">
+            <div>
+              <a href="https://t.me/LogisticsFortisway" id="calcTgBtn" target="_blank" class="pricing-btn-tg">
                 ✈ Зафиксировать в Telegram
               </a>
-              <a href="https://wa.me/998935552262" id="calcWaBtn" target="_blank" class="btn-pricing-wa">
+              <a href="https://wa.me/998935552262" id="calcWaBtn" target="_blank" class="pricing-btn-wa">
                 💬 Написать в WhatsApp
               </a>
-              <a href="tel:+998935552262" class="btn-pricing-call">
+              <a href="tel:+998935552262" class="pricing-btn-call">
                 📞 Позвонить логисту (+998 93 555-22-62)
               </a>
             </div>
@@ -429,13 +800,45 @@
       </div>
 
       <!-- Description Block Below Calculator (1-to-1 CTRANS Text) -->
-      <div class="calc-bottom-info">
-        <h4 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 12px;">
-          Калькулятор для расчета ориентировочной стоимости грузоперевозок
-        </h4>
-        <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-          Компания «FortisWay», предоставляющая транспортно-логистические услуги, разработала специально для своих клиентов калькулятор стоимости перевозок грузов в пределах Узбекистана, СНГ, Китая, Турции и Европы. Сейчас каждый клиент имеет возможность узнать, сколько ему придется заплатить за услугу перевозки груза транспортной компанией, спланировать и оптимизировать собственные расходы. С помощью калькулятора можно рассчитать стоимость доставки грузов до пункта назначения.
+      <div class="calc-info-footer-block">
+        <h4>Калькулятор для расчета ориентировочной стоимости грузоперевозок</h4>
+        <p>
+          Компания «FortisWay», предоставляющая международные транспортно-логистические услуги, разработала специально для своих клиентов калькулятор стоимости перевозок грузов в пределах Узбекистана, СНГ, Китая, Турции и Европы. Сейчас каждый клиент имеет возможность узнать, сколько ему придется заплатить за услугу перевозки груза транспортной компанией, спланировать и оптимизировать собственные расходы. С помощью калькулятора можно рассчитать стоимость доставки грузов до пункта назначения.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callback Section (1-to-1 CTRANS Screenshot 3) -->
+  <section class="callback-section-ctrans" id="callback-section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 35px;">
+        <span style="font-size: 0.88rem; font-weight: 700; color: #0284c7; text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 6px;">
+          ЗАПРОС НА
+        </span>
+        <h2 style="font-size: 2.2rem; font-weight: 800; color: #0f2d59; margin: 0;">
+          Обратный вызов
+        </h2>
+      </div>
+
+      <div class="callback-box-grid">
+        <div class="callback-img-col"></div>
+        <div class="callback-form-col">
+          <h3>Оставьте свой номер, и мы свяжемся с вами в ближайшее время</h3>
+          <form onsubmit="event.preventDefault(); alert('Спасибо! Наш диспетчер свяжется с вами в течение 5 минут.');" style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+              <label style="display: block; font-size: 0.90rem; font-weight: 600; color: #1e293b; margin-bottom: 6px;">Ваше имя *</label>
+              <input type="text" required placeholder="Ваше имя" style="width: 100%; height: 48px; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0 16px; font-size: 1rem; box-sizing: border-box;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.90rem; font-weight: 600; color: #1e293b; margin-bottom: 6px;">Ваш номер телефона *</label>
+              <input type="tel" required placeholder="+998 (90) 123-45-67" value="+998 " style="width: 100%; height: 48px; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0 16px; font-size: 1rem; box-sizing: border-box;">
+            </div>
+            <button type="submit" style="background: #0f2d59; color: #ffffff; height: 50px; border: none; border-radius: 6px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.2s; margin-top: 8px;">
+              Отправить заявку
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
